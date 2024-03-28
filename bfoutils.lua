@@ -39,11 +39,11 @@ function FormatInt(number)
 end
 
 function TableContains(t, v)
-    if not t then return false end
-    for _, tv in pairs(t) do
-        if tv == v then return true end
+    if not t then return false, 0 end
+    for idx, tv in pairs(t) do
+        if tv == v then return true, idx end
     end
-    return false
+    return false, 0
 end
 
 function FormatTime(time)
